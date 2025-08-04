@@ -879,6 +879,76 @@ export interface ApiDokumentyDokumenty extends Schema.CollectionType {
   };
 }
 
+export interface ApiNeetAktualnosciNeetAktualnosci
+  extends Schema.CollectionType {
+  collectionName: 'neet_aktualnoscis';
+  info: {
+    singularName: 'neet-aktualnosci';
+    pluralName: 'neet-aktualnoscis';
+    displayName: 'Neet Aktualno\u015Bci';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    tytul: Attribute.String;
+    data: Attribute.Date & Attribute.Required;
+    opis: Attribute.Blocks & Attribute.Required;
+    podtytul: Attribute.Text;
+    zdjecie: Attribute.Media;
+    TekstPlikiDoPobrania: Attribute.String;
+    PlikiDoPobrania: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::neet-aktualnosci.neet-aktualnosci',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::neet-aktualnosci.neet-aktualnosci',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNeetDokumentyNeetDokumenty extends Schema.CollectionType {
+  collectionName: 'neet_dokumenties';
+  info: {
+    singularName: 'neet-dokumenty';
+    pluralName: 'neet-dokumenties';
+    displayName: 'Neet Dokumenty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    tytul: Attribute.String;
+    kolorowy: Attribute.Media;
+    czarnobialy: Attribute.Media;
+    rank: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::neet-dokumenty.neet-dokumenty',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::neet-dokumenty.neet-dokumenty',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -901,6 +971,8 @@ declare module '@strapi/types' {
       'api::do-pobrania.do-pobrania': ApiDoPobraniaDoPobrania;
       'api::do-pobrania-wortks.do-pobrania-wortks': ApiDoPobraniaWortksDoPobraniaWortks;
       'api::dokumenty.dokumenty': ApiDokumentyDokumenty;
+      'api::neet-aktualnosci.neet-aktualnosci': ApiNeetAktualnosciNeetAktualnosci;
+      'api::neet-dokumenty.neet-dokumenty': ApiNeetDokumentyNeetDokumenty;
     }
   }
 }

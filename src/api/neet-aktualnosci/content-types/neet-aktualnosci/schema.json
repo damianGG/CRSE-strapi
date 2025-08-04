@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "neet_aktualnoscis",
+  "info": {
+    "singularName": "neet-aktualnosci",
+    "pluralName": "neet-aktualnoscis",
+    "displayName": "Neet Aktualności"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tytul": {
+      "type": "string"
+    },
+    "data": {
+      "type": "date",
+      "required": true
+    },
+    "opis": {
+      "type": "blocks",
+      "required": true
+    },
+    "podtytul": {
+      "type": "text"
+    },
+    "zdjecie": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "TekstPlikiDoPobrania": {
+      "type": "string"
+    },
+    "PlikiDoPobrania": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
