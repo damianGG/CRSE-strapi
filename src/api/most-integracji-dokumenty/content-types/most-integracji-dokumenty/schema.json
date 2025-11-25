@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "most_integracji_dokumenties",
+  "info": {
+    "singularName": "most-integracji-dokumenty",
+    "pluralName": "most-integracji-dokumenties",
+    "displayName": "Most Integracji Dokumenty"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tytul": {
+      "type": "string"
+    },
+    "kolorowy": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "czarnobialy": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "rank": {
+      "type": "integer"
+    }
+  }
+}

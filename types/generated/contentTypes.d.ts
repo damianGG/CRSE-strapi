@@ -879,6 +879,78 @@ export interface ApiDokumentyDokumenty extends Schema.CollectionType {
   };
 }
 
+export interface ApiMostIntegracjiAktualnosciMostIntegracjiAktualnosci
+  extends Schema.CollectionType {
+  collectionName: 'most_integracji_aktualnoscis';
+  info: {
+    singularName: 'most-integracji-aktualnosci';
+    pluralName: 'most-integracji-aktualnoscis';
+    displayName: 'Most Integracji Aktualno\u015Bci';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    tytul: Attribute.Text & Attribute.Required & Attribute.Unique;
+    data: Attribute.Date & Attribute.Required;
+    opis: Attribute.Blocks & Attribute.Required;
+    podtytul: Attribute.Text;
+    zdjecie: Attribute.Media;
+    TekstPlikiDoPobrania: Attribute.String;
+    PlikDoPobrania: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::most-integracji-aktualnosci.most-integracji-aktualnosci',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::most-integracji-aktualnosci.most-integracji-aktualnosci',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMostIntegracjiDokumentyMostIntegracjiDokumenty
+  extends Schema.CollectionType {
+  collectionName: 'most_integracji_dokumenties';
+  info: {
+    singularName: 'most-integracji-dokumenty';
+    pluralName: 'most-integracji-dokumenties';
+    displayName: 'Most Integracji Dokumenty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    tytul: Attribute.String;
+    kolorowy: Attribute.Media;
+    czarnobialy: Attribute.Media;
+    rank: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::most-integracji-dokumenty.most-integracji-dokumenty',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::most-integracji-dokumenty.most-integracji-dokumenty',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNeetAktualnosciNeetAktualnosci
   extends Schema.CollectionType {
   collectionName: 'neet_aktualnoscis';
@@ -971,6 +1043,8 @@ declare module '@strapi/types' {
       'api::do-pobrania.do-pobrania': ApiDoPobraniaDoPobrania;
       'api::do-pobrania-wortks.do-pobrania-wortks': ApiDoPobraniaWortksDoPobraniaWortks;
       'api::dokumenty.dokumenty': ApiDokumentyDokumenty;
+      'api::most-integracji-aktualnosci.most-integracji-aktualnosci': ApiMostIntegracjiAktualnosciMostIntegracjiAktualnosci;
+      'api::most-integracji-dokumenty.most-integracji-dokumenty': ApiMostIntegracjiDokumentyMostIntegracjiDokumenty;
       'api::neet-aktualnosci.neet-aktualnosci': ApiNeetAktualnosciNeetAktualnosci;
       'api::neet-dokumenty.neet-dokumenty': ApiNeetDokumentyNeetDokumenty;
     }

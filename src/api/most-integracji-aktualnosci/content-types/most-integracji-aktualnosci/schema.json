@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "most_integracji_aktualnoscis",
+  "info": {
+    "singularName": "most-integracji-aktualnosci",
+    "pluralName": "most-integracji-aktualnoscis",
+    "displayName": "Most Integracji Aktualności",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tytul": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "data": {
+      "type": "date",
+      "required": true
+    },
+    "opis": {
+      "type": "blocks",
+      "required": true
+    },
+    "podtytul": {
+      "type": "text"
+    },
+    "zdjecie": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "TekstPlikiDoPobrania": {
+      "type": "string"
+    },
+    "PlikDoPobrania": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
