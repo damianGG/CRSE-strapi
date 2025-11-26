@@ -18,7 +18,6 @@
       "allowedTypes": [
         "images",
         "files",
-        "videos",
         "audios"
       ],
       "type": "media",
@@ -28,7 +27,6 @@
       "allowedTypes": [
         "images",
         "files",
-        "videos",
         "audios"
       ],
       "type": "media",
